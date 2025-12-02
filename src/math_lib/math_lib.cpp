@@ -4,6 +4,31 @@
 
 namespace MathLib
 {
+ // Реалізація функції для обчислення факторіалу
+    long long factorial(int n)
+    {
+        // Перевірка на від'ємне число
+        if (n < 0)
+        {
+            throw std::invalid_argument("Factorial is not defined for negative numbers.");
+        }
+
+        // Базовий випадок: 0! = 1
+        if (n == 0)
+        {
+            return 1;
+        }
+
+        long long result = 1;
+        // Ітеративно обчислюємо факторіал
+        for (int i = 1; i <= n; ++i)
+        {
+            result *= i;
+        }
+        
+        return result;
+    }
+
     bool isEqual(double a, double b, double tolerance)
     {
         return abs(a - b) <= tolerance;
