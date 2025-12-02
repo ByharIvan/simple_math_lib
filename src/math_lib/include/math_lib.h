@@ -60,7 +60,10 @@ namespace MathLib
         }
         return result;
     }
- 
+
+	// Factorial
+	long long factorial(int n);
+
     // Function to check whether value is prime
     bool isPrime(int n);
 
