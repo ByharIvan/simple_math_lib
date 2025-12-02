@@ -77,3 +77,19 @@ TEST_F(MathLibTestFixture, GreatestCommonDivider)
 {
     EXPECT_EQ(MathLib::GCD(10, 6), 2);
 }
+
+// --- НОВІ ТЕСТИ ДЛЯ ФАКТОРІАЛУ ---
+TEST_F(MathLibTestFixture, FactorialTest)
+{
+    // Перевірка базових випадків
+    EXPECT_EQ(MathLib::factorial(0), 1);
+    EXPECT_EQ(MathLib::factorial(1), 1);
+    
+    // Перевірка стандартних значень
+    EXPECT_EQ(MathLib::factorial(5), 120);
+    EXPECT_EQ(MathLib::factorial(10), 3628800);
+    
+    // Перевірка, що функція викидає виняток для від'ємних чисел
+    EXPECT_THROW(MathLib::factorial(-1), std::invalid_argument);
+    EXPECT_THROW(MathLib::factorial(-5), std::invalid_argument);
+}
